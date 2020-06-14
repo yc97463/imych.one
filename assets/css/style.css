@@ -1,0 +1,93 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosansthaana.css);
+/* @import url(//fonts.googleapis.com/earlyaccess/cwtexyen.css); */
+/* @font-face {
+    font-family: huninn;
+    src: url(https://raw.githubusercontent.com/justfont/open-huninn-font/master/font/jf-openhuninn-1.1.ttf);
+} */
+* {
+    font-family: 'Noto Sans TC', sans-serif;
+    /* font-family: 'cwTeXYen', sans-serif; */
+    /* font-family: 'huninn', sans-serif; */
+}
+::selection {
+    text-shadow: 2px 2px 8px #FFF;
+    background-color:rgba(255, 237, 118, 0.5);
+    color:#000;
+}
+::-webkit-scrollbar {
+    width: 10px;
+  }
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    transition: left 1s ease-in-out, background 1s ease-out 1s;
+}
+::-webkit-scrollbar-thumb {
+    background: #ffdf01; 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #dfc100; 
+}
+::-webkit-scrollbar-thumb:active {
+    background: #000; 
+}
+a {
+    color: #ffdf01;
+}
+a:hover {
+    text-decoration: underline;
+}
+.news-pt a.logo#links {
+    text-decoration: none;
+    transition:all 0.1s ease-in-out 0s;
+}
+.news-pt a.logo#links:hover {
+    text-decoration: none;
+    color:#000;
+}
+.is-light-orange {
+    background-color:#ffdd57;border-color:transparent;color:rgba(0,0,0,.7)
+}
+.is-padding {
+    margin:0 2px 0 2px;
+}
+.to-top {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+    z-index:99999;
+    border-radius: 50px 50px 0 0;
+    background-color: #ffdd57;
+    width:50px;
+    height:100px;
+    box-shadow: 3px 3px #AAA;
+    transition:all 0.1s ease-in-out 0s;
+}
+.to-top:hover {
+    background-color: #AAA;
+    box-shadow: 3px 3px #ffdd57;
+    color: #ffdd57;
+}
+.to-top:active {
+    margin: 3px 0 -3px 10px;
+    box-shadow: 5px 5px #ffdf01;
+    background-color: #ffdd57;
+    box-shadow: 3px 3px #AAA;
+}
+.to-top i {
+    color: #000;
+    font-size: 28px;
+    transition:all 0.1s ease-in-out 0s;
+}
+.to-top i:hover {
+    color: #ffdd57;
+}
+.to-top i:active {
+    color: #000;
+}
+.notification {
+    border-radius: 0;
+    margin-bottom: 0!important;
+    width: 100%;
+    z-index:999;
+    transition:all 0.1s ease-in-out 0s;
+}
