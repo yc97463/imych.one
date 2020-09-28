@@ -1,0 +1,124 @@
+
+<html>
+
+    <head>
+    <title>Screen Message</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="Screen Message, Sean, Online, Tool, Utilities">
+    <meta name="description" content="Online Screen Message Tool">
+    </head>
+    <body onload="init()" onhashchange="parseHash()" onresize="adjust()">
+    <textarea id="textarea" onKeyUp="adjust()" onpaste="adjust()" oninput="adjust()">早安</textarea>
+    <span id="test"></span>
+    <script type="text/javascript">
+                function adjust() {
+                    ta = document.getElementById("textarea");
+                    test = document.getElementById("test");
+    
+                    test.textContent = ta.value;
+                    // Otherwise, the newline would not be counted.
+                    if (ta.value[ta.value.length-1] == "\n") {
+                        test.innerHTML += '.';
+                    }
+    
+                    ratioX = (window.innerWidth) / test.offsetWidth;
+                    ratioY = (window.innerHeight) / test.offsetHeight;
+                    ratio = Math.min(ratioX,ratioY);
+                    fontSize = Math.floor(30 * ratio) + "px"
+                    ta.style.fontSize = fontSize;
+                    newHeight = Math.ceil(test.offsetHeight * ratio);
+                    //ta.style.height = newHeight + "px";
+                    //ta.style.top = Math.floor((window.innerHeight - newHeight)/2) + "px";
+                    ta.style.paddingTop = Math.floor((window.innerHeight - newHeight)/2) + "px";
+                    ta.style.paddingBottom = Math.floor((window.innerHeight - newHeight)/2) + "px";
+                    newWidth = Math.ceil(test.offsetWidth * ratio);
+                    //ta.style.width = newWidth + "px";
+                    ta.style.paddingLeft = Math.max(0,Math.floor((window.innerWidth - newWidth)/2)) + "px";
+                    ta.style.paddingRight = Math.max(0,Math.floor((window.innerWidth - newWidth)/2)) + "px";
+    
+                    //test.innerHTML = newHeight + " " + window.innerHeight + " " + fontSize;
+    
+                    href = "#t=" + encodeURIComponent(ta.value);
+                    if (ta.style.color) {
+                        href += ";f=" + encodeURIComponent(ta.style.color);
+                    }
+                    if (ta.style.backgroundColor) {
+                        href += ";b=" + encodeURIComponent(ta.style.backgroundColor);
+                    }
+                    window.location.hash = href;
+                }
+    
+                function parseHash() {
+                    ta = document.getElementById("textarea");
+                    ta.focus();
+    
+                    var queryString = {};
+                    window.location.href.replace(
+                        new RegExp("([^?=&;#]+)(=([^&;]*))", "g"),
+                        function($0, $1, $2, $3) {queryString[$1] = decodeURIComponent($3); }
+                    );
+                    if (queryString['t']) {
+                        ta.value = queryString['t'];
+                    }
+                    if (queryString['f']) {
+                        ta.style.color = queryString['f'];
+                    }
+                    if (queryString['b']) {
+                        ta.style.backgroundColor = queryString['b'];
+                    }
+                    adjust();
+                }
+    
+                function init() {
+                    if (window.navigator.mozApps) {
+                        document.getElementById("firefox").style.display = "block";
+                    }
+                    parseHash();
+                }
+            </script>
+    <style type="text/css">
+                 #textarea {
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                    height: 100%;
+                    font-family: "Helvetica Neue", Helvetica, "微軟正黑體", "Microsoft JhengHei", Arial, sans-serif;
+                    padding: 0px;
+                    margin: 0px;
+                    border: 0px;
+                    text-align: center;
+                    overflow: hidden;
+                    resize: none;
+                    background: #000000;
+                    color: #FFFFFF;
+                    /*
+                    This used to be here. Not sure why, but eventually,
+                    it broke Firefox (newlines not wrapping lines)
+                    white-space: nowrap;
+                    */
+                }
+    
+                /* disable focus border at Chrome */
+                #textarea :focus {
+                    outline: none;
+                }
+    
+                #test {
+                    position: absolute;
+                    visibility: hidden;
+                    top: 0px;
+                    left: 0px;
+                    font-family: "Helvetica Neue", Helvetica, "微軟正黑體", "Microsoft JhengHei", Arial, sans-serif;
+                    font-size: 30px;
+                    white-space: pre;
+                    border: 0px;
+                    padding: 0.1em;
+                    margin: 0px;
+                }
+            </style>
+    </body>
+    </html>
+    
