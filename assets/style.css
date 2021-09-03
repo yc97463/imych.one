@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500;600;700&family=Noto+Sans+TC:wght@400;700&display=swap');
+
+body {
+    background-color: #fafafa;
+    font-family: 'IBM Plex Sans Arabic', 'Noto Sans TC', sans-serif;
+}
+
+.header-fixed {
+    padding-top: 2rem;
+}
+
+.width-fixed {
+    max-width: 960px;
+}
+
+.container {
+    margin-bottom: 2rem;
+}
+
+.subtitle#yc {
+    border-left: #4a4a4a 3px solid;
+    padding-left: .7rem;
+}
+
+.content#yc {
+    padding-left: 2rem;
+}
+
+.dot {
+    padding: 0 .3rem;
+}
