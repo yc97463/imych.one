@@ -5,6 +5,11 @@ body {
     font-family: 'IBM Plex Sans Arabic', 'Noto Sans TC', sans-serif;
 }
 
+.centered-section {
+    max-width: 768px;
+    margin: 0 auto;
+}
+
 ::selection { 
     background-color: #616161;
     color: #FFFFFF;
@@ -52,4 +57,12 @@ body {
 
 .link-youtube {
     color: #FF0000;
+}
+
+.media {
+    align-items: center;
+}
+
+.media#about-card .media-content {
+    overflow: hidden;
 }
