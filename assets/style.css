@@ -32,12 +32,12 @@ body {
     margin-bottom: 2rem;
 }
 
-.subtitle#yc {
+.subtitle#single-section {
     border-left: #4a4a4a 3px solid;
     padding-left: .7rem;
 }
 
-.content#yc {
+.content#single-section {
     padding-left: 2rem;
 }
 
@@ -65,4 +65,8 @@ body {
 
 .media#about-card .media-content {
     overflow: hidden;
+}
+
+.title#project-card {
+    margin-bottom: 1.7rem;
 }
