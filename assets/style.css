@@ -5,6 +5,16 @@ body {
     font-family: 'IBM Plex Sans Arabic', 'Noto Sans TC', sans-serif;
 }
 
+::selection { 
+    background-color: #616161;
+    color: #FFFFFF;
+}
+
+::-moz-selection {
+    background-color: #616161;
+    color: #FFFFFF;
+}
+
 .header-fixed {
     padding-top: 2rem;
 }
