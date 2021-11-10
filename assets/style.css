@@ -55,6 +55,11 @@ body {
     text-decoration: underline;
 }
 
+.link-normal {
+    color: #4a4a4a;
+    text-decoration: underline;
+}
+
 .link-youtube {
     color: #FF0000;
 }
