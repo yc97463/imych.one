@@ -1,77 +1,80 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500;600;700&family=Noto+Sans+TC:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap");
 
 body {
-    background-color: #fafafa;
-    font-family: 'IBM Plex Sans Arabic', 'Noto Sans TC', sans-serif;
+  background-color: #fafafa;
+  font-family: "IBM Plex Sans", "Heiti TC", "Noto Sans TC", sans-serif;
 }
 
 .centered-section {
-    max-width: 768px;
-    margin: 0 auto;
+  max-width: 768px;
+  margin: 0 auto;
 }
 
-::selection { 
-    background-color: #616161;
-    color: #FFFFFF;
+::selection {
+  background-color: #616161;
+  color: #ffffff;
 }
 
 ::-moz-selection {
-    background-color: #616161;
-    color: #FFFFFF;
+  background-color: #616161;
+  color: #ffffff;
 }
 
 .header-fixed {
-    padding-top: 2rem;
+  padding-top: 2rem;
 }
 
 .width-fixed {
-    max-width: 960px;
+  max-width: 960px;
 }
 
 .container {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 }
 
 .subtitle#single-section {
-    border-left: #4a4a4a 3px solid;
-    padding-left: .7rem;
+  border-left: #4a4a4a 3px solid;
+  padding-left: 0.7rem;
+  /* font-weight: 700; */
 }
 
 .content#single-section {
-    padding-left: 2rem;
+  padding-left: 2rem;
+  font-weight: 400;
+  font-weight: 400;
 }
 
 .dot {
-    padding: 0 .3rem;
+  padding: 0 0.3rem;
 }
 
 .footer {
-    background-color: #4a4a4a;
-    color: #FFFFFF;
+  background-color: #4a4a4a;
+  color: #ffffff;
 }
 
 .footer a {
-    color: #FFFFFF;
-    text-decoration: underline;
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 .link-normal {
-    color: #4a4a4a;
-    text-decoration: underline;
+  color: #4a4a4a;
+  text-decoration: underline;
 }
 
 .link-youtube {
-    color: #FF0000;
+  color: #ff0000;
 }
 
 .media {
-    align-items: center;
+  align-items: center;
 }
 
 .media#about-card .media-content {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .title#project-card {
-    margin-bottom: 1.7rem;
+  margin-bottom: 1.7rem;
 }
