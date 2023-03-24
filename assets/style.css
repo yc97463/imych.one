@@ -44,8 +44,9 @@ body {
   font-weight: 400;
 }
 
-.dot {
+.dotTag::after {
   padding: 0 0.3rem;
+  content: "·";
 }
 
 .footer {
