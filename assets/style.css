@@ -79,3 +79,20 @@ body {
 .title#project-card {
   margin-bottom: 1.7rem;
 }
+
+.quota {
+  font-weight: 700;
+  text-align: center;
+  font-size: larger;
+  margin: 1rem auto;
+}
+
+.quota::before {
+  content: "\“";
+  margin: .5rem;
+}
+
+.quota::after {
+  content: "\”";
+  margin: .5rem;
+}
