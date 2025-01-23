@@ -30,7 +30,7 @@ export function Calendar() {
         .join('&')}`;
 
     return (
-        <main className="h-screen w-screen flex flex-col items-center justify-center">
+        <main className={`${styles.background} h-screen w-screen flex flex-col items-center justify-center`}>
             {/* 標題 */}
             <div className="mb-6">
                 <Image
