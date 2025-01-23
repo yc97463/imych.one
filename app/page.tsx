@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Check, Copy, Calendar } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 export default function HomePage() {
@@ -18,7 +19,17 @@ export default function HomePage() {
 
     return (
         <main className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-700 flex flex-col items-center justify-center p-4">
-            <h1 className="text-6xl font-bold mb-12 text-center text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">油成</h1>
+            <div className="mb-8 flex flex-col items-center gap-2">
+                {/* 標題 */}
+                <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400">
+                    <Image src="/assets/yc-zh-name.svg" alt="yc's name" width={128} height={64} />
+                </h1>
+
+                {/* 名言 */}
+                <blockquote className="text-white">
+                    工具雖小，卻能一再解決問題。
+                </blockquote>
+            </div>
 
             <div className="w-full max-w-md bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl shadow-2xl p-6">
                 <div className="flex items-center space-x-4">
