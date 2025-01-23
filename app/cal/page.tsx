@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import styles from '../../styles/calendar.module.css';
-import Head from 'next/head';
 
 const calendarIds = [
     "eW91dWFsYW44N0BnbWFpbC5jb20",
@@ -30,36 +29,31 @@ export default function CalendarPage() {
         .join('&')}`;
 
     return (
-        <>
-            <Head>
-                <title>YC 的行程表</title>
-            </Head>
-            <main className={`${styles.background} h-screen w-screen flex flex-col items-center justify-center`}>
-                {/* 標題 */}
-                <div className="mb-6">
-                    <Image
-                        src="/assets/cal/title.svg"
-                        alt="yc's schedule"
-                        width={256}
-                        height={64}
-                    />
-                </div>
+        <main className={`${styles.background} h-screen w-screen flex flex-col items-center justify-center`}>
+            {/* 標題 */}
+            <div className="mb-6">
+                <Image
+                    src="/assets/cal/title.svg"
+                    alt="yc's schedule"
+                    width={256}
+                    height={64}
+                />
+            </div>
 
-                {/* 行程表 */}
-                <div className="w-full max-w-4xl aspect-video relative">
-                    <iframe
-                        src={calendarUrl}
-                        className={styles.iframe}
-                        style={{
-                            border: 'none',
-                            width: '100%',
-                            height: '100%',
-                        }}
-                        frameBorder="0"
-                        scrolling="no"
-                    />
-                </div>
-            </main>
-        </>
+            {/* 行程表 */}
+            <div className="w-full max-w-4xl aspect-[4/3] relative">
+                <iframe
+                    src={calendarUrl}
+                    className={styles.iframe}
+                    style={{
+                        border: 'none',
+                        width: '100%',
+                        height: '100%',
+                    }}
+                    frameBorder="0"
+                    scrolling="no"
+                />
+            </div>
+        </main>
     );
 }
