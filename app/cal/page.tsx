@@ -24,50 +24,42 @@ const calendarIds = [
     "ZTkxMWRmNmM5NDYyNzU3M2Q0ODRmNGU5NjZkNjI0NGIzYTYwY2YzY2ZjZDNjYzdjMWQyNTVkYzZhZDI4YjcyZUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t",
 ];
 
-export function Calendar() {
+export default function CalendarPage() {
     const calendarUrl = `https://calendar.google.com/calendar/embed?ctz=Asia/Taipei&wkst=2&mode=WEEK&title=YC+%E7%9A%84%E8%A1%8C%E7%A8%8B%E8%A1%A8&${calendarIds
         .map((id) => `src=${id}`)
         .join('&')}`;
 
     return (
-        <main className={`${styles.background} h-screen w-screen flex flex-col items-center justify-center`}>
-            {/* 標題 */}
-            <div className="mb-6">
-                <Image
-                    src="/assets/cal/title.svg"
-                    alt="yc's schedule"
-                    width={256}
-                    height={64}
-                />
-            </div>
-
-            {/* 行程表 */}
-            <div className="w-full max-w-4xl aspect-video">
-                <iframe
-                    src={calendarUrl}
-                    className={styles.iframe}
-                    style={{
-                        border: 'none',
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        transform: 'translate(-50%, -50%)',
-                    }}
-                    frameBorder="0"
-                    scrolling="no"
-                />
-            </div>
-        </main>
-    );
-}
-
-export default function CalendarPage() {
-    return (
         <>
             <Head>
                 <title>YC 的行程表</title>
             </Head>
-            <Calendar />
+            <main className={`${styles.background} h-screen w-screen flex flex-col items-center justify-center`}>
+                {/* 標題 */}
+                <div className="mb-6">
+                    <Image
+                        src="/assets/cal/title.svg"
+                        alt="yc's schedule"
+                        width={256}
+                        height={64}
+                    />
+                </div>
+
+                {/* 行程表 */}
+                <div className="w-full max-w-4xl aspect-video relative">
+                    <iframe
+                        src={calendarUrl}
+                        className={styles.iframe}
+                        style={{
+                            border: 'none',
+                            width: '100%',
+                            height: '100%',
+                        }}
+                        frameBorder="0"
+                        scrolling="no"
+                    />
+                </div>
+            </main>
         </>
     );
 }
