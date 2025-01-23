@@ -26,10 +26,8 @@ jobs:
         run: npm install
 
       # 編譯並靜態導出 Next.js
-      - name: Build and Export
-        run: |
-          npm run build
-          npm run export
+      - name: Build Next.js
+        run: npm run build
 
       # 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
