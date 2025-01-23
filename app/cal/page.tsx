@@ -41,7 +41,7 @@ export default function CalendarPage() {
             </div>
 
             {/* 行程表 */}
-            <div className="w-full max-w-4xl aspect-[4/3] relative">
+            <div className="w-full max-w-4xl aspect-[9/14] md:aspect-[4/3] relative">
                 <iframe
                     src={calendarUrl}
                     className={styles.iframe}
