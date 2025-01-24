@@ -57,8 +57,17 @@ export default function HomePage() {
     return (
         <main className="min-h-screen bg-background-shine bg-[length:400%_400%] animate-background-shine flex flex-col items-center justify-center p-4">
             <div className="mb-8 flex flex-col items-center gap-2">
+                {/* 大頭貼 */}
+                <Image
+                    src="/assets/yc-avatar.webp"
+                    alt="yc's avatar"
+                    width={128}
+                    height={128}
+                    className="rounded-lg mb-2"
+                />
+
                 {/* 標題 */}
-                <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-primary">
+                <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-primary mb-4">
                     <Image src="/assets/yc-zh-name.svg" alt="yc's name" width={128} height={64} />
                 </h1>
 
