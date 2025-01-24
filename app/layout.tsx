@@ -1,10 +1,22 @@
 
 import "./globals.css";
 import { Metadata } from 'next';
+import { Roboto_Condensed, Noto_Sans_TC } from "next/font/google"
+
 // import Header from './components/Header';
 // import ContactSection from './components/ContactSection';
 // import AboutSection from './components/AboutSection';
 // import SkillsSection from './components/SkillsSection';
+
+const notoSans = Noto_Sans_TC({
+    variable: "--font-noto-sans-tc",
+    preload: false
+});
+
+const robotoCondensed = Roboto_Condensed({
+    variable: "--font-roboto-condensed",
+    preload: false
+});
 
 export const metadata: Metadata = {
     title: 'yc97463 | 油成',
@@ -20,7 +32,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="zh-Hant">
-            <body>
+            <body className={`${robotoCondensed.variable} ${notoSans.variable}`}>
                 {children}
                 {/* <Header />
                     <main>
