@@ -36,4 +36,4 @@ jobs:
           github_token: ${{ secrets.DEPLOY_TOKEN }}
           publish_dir: ./out
           publish_branch: gh-pages    
-          cname: "ghp.imych.one"
+          cname: "imych.one"
