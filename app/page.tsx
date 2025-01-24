@@ -55,7 +55,7 @@ export default function HomePage() {
     };
 
     return (
-        <main className="min-h-screen bg-background-shine bg-[length:400%_400%] animate-background-shine flex flex-col items-center justify-center p-4">
+        <main className="min-h-dvh bg-background-shine bg-[length:400%_400%] animate-background-shine flex flex-col items-center justify-center p-4">
             <div className="mb-8 flex flex-col items-center gap-2">
                 {/* 大頭貼 */}
                 <Image
