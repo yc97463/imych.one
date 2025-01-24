@@ -1,5 +1,6 @@
 import { shortlinks, Shortlink } from "@/../lib/shortlinks";
 import RedirectTo from "@/components/RedirectTo";
+import { Metadata } from "next";
 
 // Define all possible static paths for the slug
 export function generateStaticParams() {
@@ -9,6 +10,23 @@ export function generateStaticParams() {
 }
 
 // Dynamic route page component
+export async function generateMetadata({
+    params,
+}: {
+    params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+    const resolvedParams = await params;
+    const { slug } = resolvedParams;
+
+    const link = shortlinks.find((link: Shortlink) => link.slug === slug);
+    const name = link?.name;
+
+    return {
+        title: name ? `Redirecting to ${name}` : "Redirecting...",
+        description: name ? `You are being redirected to ${name}` : "You are being redirected",
+    };
+}
+
 export default async function RedirectPage({
     params,
 }: {
