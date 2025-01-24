@@ -31,14 +31,14 @@ export default function HomePage() {
                 </blockquote>
             </div>
 
-            <div className="w-full max-w-md bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl shadow-2xl p-6">
-                <div className="flex items-center space-x-4">
+            <div className="w-full max-w-md bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl shadow-2xl p-3">
+                <div className="flex items-center space-x-3">
                     <div className="flex-grow flex bg-white/20 rounded-2xl overflow-hidden">
                         <input
                             type="text"
                             value={email}
                             readOnly
-                            className="flex-grow bg-transparent text-white p-3 outline-none placeholder-gray-400"
+                            className="flex-grow bg-transparent text-white px-4 outline-none placeholder-gray-400"
                         />
                         <button
                             onClick={handleCopy}
