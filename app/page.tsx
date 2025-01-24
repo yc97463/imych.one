@@ -1,10 +1,47 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from "react";
 import { Check, Copy, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { motion, AnimatePresence } from "framer-motion";
 
+const quotes = [
+    "工具雖小，卻能一再解決問題。",
+    "用設計改變生活。",
+    "學習讓靈感成為日常。",
+];
+
+function QuotesMarquee() {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentIndex((prevIndex) => (prevIndex + 1) % quotes.length);
+        }, 2200); // 每次停留 + 切換總時長
+        return () => clearInterval(interval);
+    }, []);
+
+    return (
+        <div className="h-10 overflow-hidden text-white flex items-center justify-center">
+            <AnimatePresence mode="wait">
+                <motion.div
+                    key={currentIndex}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{
+                        duration: 0.3, // 延長動畫時間
+                        ease: "easeInOut",
+                    }}
+                    className="absolute"
+                >
+                    {quotes[currentIndex]}
+                </motion.div>
+            </AnimatePresence>
+        </div>
+    );
+}
 
 export default function HomePage() {
     const [isCopied, setIsCopied] = useState(false);
@@ -26,9 +63,7 @@ export default function HomePage() {
                 </h1>
 
                 {/* 名言 */}
-                <blockquote className="text-white">
-                    工具雖小，卻能一再解決問題。
-                </blockquote>
+                <QuotesMarquee />
             </div>
 
             <div className="w-full max-w-md bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl shadow-2xl p-3">
