@@ -37,6 +37,7 @@ export default function CalendarPage() {
                     alt="yc's schedule"
                     width={256}
                     height={64}
+                    className={`${styles.title}`}
                 />
             </div>
 
