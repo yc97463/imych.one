@@ -7,9 +7,15 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from "framer-motion";
 
 const quotes = [
-    "工具雖小，卻能一再解決問題。",
-    "用設計改變生活。",
-    "學習讓靈感成為日常。",
+    <>
+        工具雖小，卻能一再解決問題<span className="absolute">。</span>
+    </>,
+    <>
+        用設計改變生活<span className="absolute">。</span>
+    </>,
+    <>
+        學習讓靈感成為日常<span className="absolute">。</span>
+    </>,
 ];
 
 function QuotesMarquee() {
