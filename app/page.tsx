@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from "react";
-import { Check } from 'lucide-react';
+import { Check, Copy } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from "framer-motion";
@@ -121,12 +121,12 @@ export default function HomePage() {
                             <div className="flex items-center gap-6">
                                 <button
                                     onClick={handleCopy}
-                                    className="text-base text-gray-500 hover:text-primary transition-colors flex items-center gap-1.5"
+                                    className="text-base text-gray-500 hover:text-primary transition-colors flex items-center gap-1.5 cursor-pointer"
                                 >
                                     {isCopied ? (
                                         <><Check className="w-4 h-4 text-primary" /> Copied!</>
                                     ) : (
-                                        <>{email}</>
+                                        <>{email} <Copy className="w-4 h-4" /></>
                                     )}
                                 </button>
                                 <Link
