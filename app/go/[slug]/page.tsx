@@ -1,5 +1,5 @@
-import { shortlinks, Shortlink } from "@/../lib/shortlinks";
-import RedirectTo from "@/components/RedirectTo";
+import { shortlinks, Shortlink } from "@/lib/shortlinks";
+import RedirectTo from "@/app/components/RedirectTo";
 import { Metadata } from "next";
 
 // Define all possible static paths for the slug

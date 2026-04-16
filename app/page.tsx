@@ -5,6 +5,8 @@ import { Check, Copy, Calendar } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from "framer-motion";
+import ProjectsSection from "./components/ProjectsSection";
+import ExperienceSection from "./components/ExperienceSection";
 
 const quotes = [
     <>
@@ -61,7 +63,9 @@ export default function HomePage() {
     };
 
     return (
-        <main className="min-h-dvh bg-background-shine bg-[length:400%_400%] animate-background-shine flex flex-col items-center justify-center p-4">
+        <main className="bg-background-shine bg-[length:400%_400%] animate-background-shine flex flex-col">
+            {/* Hero */}
+            <div className="relative min-h-dvh flex flex-col items-center justify-center p-4">
             <div className="mb-8 flex flex-col items-center gap-2">
                 {/* 大頭貼 */}
                 <Image
@@ -105,6 +109,31 @@ export default function HomePage() {
                         <Calendar className="w-6 h-6" />
                     </Link>
                 </div>
+            </div>
+
+            {/* Scroll down indicator */}
+            <motion.div
+                className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-white/40"
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, duration: 0.6, ease: 'easeOut' }}
+            >
+                <span className="text-xs tracking-widest uppercase">Scroll</span>
+                <motion.div
+                    animate={{ y: [0, 5, 0] }}
+                    transition={{ repeat: Infinity, duration: 1.4, ease: 'easeInOut' }}
+                >
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                </motion.div>
+            </motion.div>
+            </div>{/* end hero */}
+
+            {/* Content sections */}
+            <div className="max-w-3xl mx-auto w-full px-4 py-16 flex flex-col gap-16">
+                <ProjectsSection />
+                <ExperienceSection />
             </div>
         </main>
     );
