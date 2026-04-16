@@ -19,6 +19,7 @@ const robotoCondensed = Roboto_Condensed({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://imych.one'),
     title: 'yc97463 | 油成',
     description: 'About Me. 油成是個秉持著以小工具的理念解決日常問題的大學生。',
     icons: {

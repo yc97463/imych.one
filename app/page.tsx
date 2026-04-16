@@ -113,7 +113,7 @@ export default function HomePage() {
                                         工具雖小，卻能一再解決問題。
                                     </p>
                                     <p>累積超過 5 年的專案開發經驗，橫跨前後端框架；目前正在深入數學科學，朝跨領域工程師發展。</p>
-                                    <p>也喜歡研究交通、人文與城市設計，著迷於發現人事物之間細微的關聯。</p>
+                                    <p>也喜歡研究人文、交通與城市設計，著迷於發現人事物之間細微的關聯。</p>
                                 </div>
                             </div>
 
@@ -148,32 +148,34 @@ export default function HomePage() {
                 </div>
             </section>
 
-            <div className="w-full border-t border-gray-100" />
-
             {/* Content sections */}
-            <div className="w-full pb-24 pt-16">
+            <div className="w-full">
                 <div className="max-w-[1800px] mx-auto px-6 flex flex-col gap-16">
-                    <TimelineSection
-                        id="experience"
-                        title="社群經歷"
-                        items={experiences}
-                        renderItem={(item) => <ExperienceItem item={item} />}
-                        layout="horizontal"
-                    />
-                    <ProjectsSection id="projects" />
-                    <TimelineSection
-                        id="talks"
-                        title="演講與發表"
-                        items={talks}
-                        renderItem={(item) => <TalkItem item={item} />}
-                        layout="horizontal"
-                    />
+                    <div id="experience">
+                        <TimelineSection
+                            title="社群經歷"
+                            items={experiences}
+                            renderItem={(item) => <ExperienceItem item={item} />}
+                            layout="horizontal"
+                        />
+                    </div>
+                    <div id="projects">
+                        <ProjectsSection />
+                    </div>
+                    <div id="talks">
+                        <TimelineSection
+                            title="演講與發表"
+                            items={talks}
+                            renderItem={(item) => <TalkItem item={item} />}
+                            layout="horizontal"
+                        />
+                    </div>
                 </div>
             </div>
 
             {/* Footer */}
-            <footer className="w-full border-t border-gray-200">
-                <div className="max-w-[1800px] mx-auto px-6 py-12">
+            <footer className="w-full border-t border-gray-200 mt-16">
+                <div className="max-w-[1800px] mx-auto px-6 py-16">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                         {/* Branding */}
                         <div className="flex flex-col gap-3">

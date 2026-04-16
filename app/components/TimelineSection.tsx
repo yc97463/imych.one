@@ -24,14 +24,14 @@ function groupByYear<T extends BaseItem>(items: T[]) {
   }));
 }
 
-export default function TimelineSection<T extends BaseItem>({ id, title, items, renderItem, layout = 'vertical' }: Props<T>) {
+export default function TimelineSection<T extends BaseItem>({ title, items, renderItem, layout = 'vertical' }: Props<T>) {
   const groups = groupByYear(items);
 
   const latestYear = groups[0]?.year;
   if (latestYear !== undefined && new Date().getFullYear() - latestYear > 4) return null;
 
   return (
-    <section id={id}>
+    <section>
       <h1 className="text-lg tracking-widest uppercase text-gray-400 mb-4">{title}</h1>
 
       {layout === 'horizontal' ? (
