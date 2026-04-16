@@ -140,7 +140,7 @@ export default function HomePage() {
                                     className="text-base text-gray-500"
                                     target="_blank"
                                 >
-                                    最近在忙些 ↗
+                                    最近忙這些 ↗
                                 </Link>
                             </div>
                         </motion.div>
@@ -194,7 +194,7 @@ export default function HomePage() {
                             {[
                                 { label: 'Email', href: 'mailto:hi@imych.one' },
                                 { label: 'Blog', href: 'https://blog.imych.one', external: true },
-                                { label: '最近在忙些', href: 'https://blog.imych.one/now', external: true },
+                                { label: '最近忙這些', href: 'https://blog.imych.one/now', external: true },
                                 { label: '預約時間', href: '/cal' },
                             ].map(({ label, href, external }) => (
                                 <a
