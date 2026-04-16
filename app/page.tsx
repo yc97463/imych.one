@@ -88,7 +88,7 @@ export default function HomePage() {
                             className="aspect-video overflow-hidden bg-gray-100"
                         >
                             <Image
-                                src="/assets/yc-avatar.webp"
+                                src="/assets/yc-and-ULB.jpeg"
                                 alt="yc's avatar"
                                 width={600}
                                 height={600}

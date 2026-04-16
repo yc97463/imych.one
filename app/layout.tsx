@@ -26,6 +26,15 @@ export const metadata: Metadata = {
         shortcut: '/favicon.ico',
         apple: '/assets/youu.png',
     },
+    openGraph: {
+        title: 'yc97463 | 油成',
+        description: 'About Me. 油成是個秉持著以小工具的理念解決日常問題的大學生。',
+        images: [{ url: '/assets/og-image.jpeg' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        images: ['/assets/og-image.jpeg'],
+    },
 };
 
 
