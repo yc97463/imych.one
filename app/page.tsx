@@ -21,7 +21,7 @@ function ExperienceItem({ item }: { item: Experience }) {
                     rel="noopener noreferrer"
                     className="text-gray-500 text-base mt-0.5 inline-flex items-center gap-0.5"
                 >
-                    {item.org} <span className="text-xs">↗</span>
+                    {item.org} <span>↗</span>
                 </a>
             ) : (
                 <p className="text-gray-500 text-base mt-0.5">{item.org}</p>
@@ -38,9 +38,9 @@ function TalkItem({ item }: { item: Talk }) {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-900 text-lg font-medium leading-snug group"
+                    className="text-gray-900 text-lg font-medium leading-snug"
                 >
-                    {item.title} <span className="text-gray-300 group-hover:text-primary">↗</span>
+                    {item.title} <span>↗</span>
                 </a>
             ) : (
                 <p className="text-gray-900 text-lg font-medium leading-snug">{item.title}</p>
