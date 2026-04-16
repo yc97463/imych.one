@@ -77,14 +77,14 @@ function ProjectCard({ project, i }: { project: typeof projects[number]; i: numb
   );
 }
 
-export default function ProjectsSection({ id }: { id?: string }) {
+export default function ProjectsSection() {
   const [expanded, setExpanded] = useState(false);
 
   const visibleProjects = expanded ? projects : projects.slice(0, VISIBLE_COUNT);
   const hiddenProjects = projects.slice(VISIBLE_COUNT);
 
   return (
-    <section id={id}>
+    <section>
       <h1 className="text-lg tracking-widest uppercase text-gray-400 mb-4">專案</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-6">
