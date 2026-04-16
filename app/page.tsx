@@ -155,7 +155,7 @@ export default function HomePage() {
                 <div className="max-w-[1800px] mx-auto px-6 flex flex-col gap-16">
                     <TimelineSection
                         id="experience"
-                        title="經歷"
+                        title="社群經歷"
                         items={experiences}
                         renderItem={(item) => <ExperienceItem item={item} />}
                         layout="horizontal"
@@ -163,7 +163,7 @@ export default function HomePage() {
                     <ProjectsSection id="projects" />
                     <TimelineSection
                         id="talks"
-                        title="演講"
+                        title="演講與發表"
                         items={talks}
                         renderItem={(item) => <TalkItem item={item} />}
                         layout="horizontal"

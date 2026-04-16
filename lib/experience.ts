@@ -9,8 +9,8 @@ export type Experience = {
 export const experiences: Experience[] = [
   {
     years: [2026],
-    role: "副組長",
-    org: "HITCON 2026 系統開發組",
+    role: "系統開發組副組長",
+    org: "HITCON 2026",
     link: "https://hitcon.org/2026/"
   },
   {
@@ -50,19 +50,20 @@ export const experiences: Experience[] = [
   },
   {
     years: [2025],
-    role: "副組長",
-    org: "HITCON 2025 系統開發組",
+    role: "系統開發組副組長",
+    org: "HITCON 2025",
     link: "https://hitcon.org/2025/"
   },
   {
     years: [2023, 2024],
-    role: "Lead",
+    role: "社群領袖",
     org: "Google 學生開發者社群 — 國立東華大學",
   },
   {
     years: [2022, 2023],
     role: "Intern Lead",
     org: "GDSC NDHU",
+    isHide: true,
   },
   {
     years: [2021, 2022],
@@ -74,6 +75,7 @@ export const experiences: Experience[] = [
     years: [2020, 2021, 2022, 2023, 2024, 2025, 2026],
     role: "成員",
     org: "鹿鯊工作室",
+    isHide: true,
   },
   {
     years: [2023],
@@ -84,6 +86,12 @@ export const experiences: Experience[] = [
     years: [2023],
     role: "資訊組、課程講師、隊輔組副組長",
     org: "SITCON 2023 Summer Camp",
+  },
+  {
+    years: [2023, 2024],
+    role: "學生權益部部長",
+    org: "東華大學學生會",
+    link: "https://dhsa.ndhu.edu.tw"
   },
   {
     years: [2022, 2023],
@@ -103,8 +111,8 @@ export const experiences: Experience[] = [
   },
   {
     years: [2022],
-    role: "全國高級中等學校學生自治培力營隊輔",
-    org: "TYAD 2022",
+    role: "隊輔",
+    org: "TYAD 全國高級中等學校學生自治培力營",
   },
   {
     years: [2022],
@@ -120,6 +128,7 @@ export const experiences: Experience[] = [
     years: [2021, 2022],
     role: "Developer",
     org: "RNRS",
+    isHide: true,
   },
   {
     years: [2021],
@@ -135,10 +144,12 @@ export const experiences: Experience[] = [
     years: [2020, 2021, 2022],
     role: "Foundator",
     org: "SMHS Open Source Organization",
+    isHide: true,
   },
   {
     years: [2020],
     role: "文書兼資訊",
     org: "三民高中班級代表聯合會",
+    isHide: true,
   },
 ];
