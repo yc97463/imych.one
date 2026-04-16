@@ -8,81 +8,90 @@ import { projects } from '@/lib/projects';
 const VISIBLE_COUNT = 6;
 
 function ProjectCard({ project, i }: { project: typeof projects[number]; i: number }) {
+  const firstLink = project.links[0];
+  const cardContent = (
+    <>
+      {project.image && (
+        <div className="relative w-full aspect-video overflow-hidden">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover transition-transform duration-300"
+          />
+        </div>
+      )}
+
+      <div className="flex flex-col flex-1 gap-2">
+        <h3 className="text-gray-900 font-semibold text-lg leading-snug">{project.title}</h3>
+        <p className="text-gray-500 text-sm leading-relaxed flex-1">{project.description}</p>
+
+        {/* {project.tags.length > 0 && (
+          <div className="flex flex-wrap gap-1.5 pt-1">
+            {project.tags.map((tag) => (
+              <span key={tag} className="text-xs text-gray-400 bg-gray-100 px-2 py-0.5">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )} */}
+
+        {project.links.length > 0 && (
+          <div className="flex flex-wrap gap-3 pt-1">
+            {project.links.map((link) => (
+              <span
+                key={link.label}
+                className="text-sm text-gray-400 group-hover:text-primary transition-colors"
+              >
+                {link.label} ↗
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    </>
+  );
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.3, delay: i * 0.05, ease: 'easeOut' }}
-      className="relative rounded-2xl border border-white/10 bg-primary/50 overflow-hidden flex flex-col"
+      whileHover={{ scale: 0.97 }}
+      className="overflow-hidden flex flex-col gap-2 group"
     >
-      {/* sheen overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/[8%] to-transparent pointer-events-none rounded-2xl" />
-
-      {project.image && (
-        <div className="relative w-full aspect-video overflow-hidden rounded-t-2xl">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover"
-          />
-        </div>
+      {firstLink ? (
+        <a
+          href={firstLink.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="overflow-hidden flex flex-col gap-2"
+        >
+          {cardContent}
+        </a>
+      ) : (
+        cardContent
       )}
-
-      <div className="relative flex flex-col flex-1 p-5 gap-3">
-        <h3 className="text-white font-semibold text-base leading-snug">{project.title}</h3>
-        <p className="text-white/60 text-sm leading-relaxed flex-1">{project.description}</p>
-
-        {project.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="rounded-full bg-white/10 px-2.5 py-0.5 text-xs text-white/70"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-        )}
-
-        {project.links.length > 0 && (
-          <div className="flex flex-wrap gap-2 pt-1">
-            {project.links.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-xl bg-white/10 hover:bg-white/20 transition-colors duration-200 px-3 py-1 text-xs text-white/80"
-              >
-                {link.label}
-              </a>
-            ))}
-          </div>
-        )}
-      </div>
     </motion.div>
   );
 }
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ id }: { id?: string }) {
   const [expanded, setExpanded] = useState(false);
 
   const visibleProjects = expanded ? projects : projects.slice(0, VISIBLE_COUNT);
   const hiddenProjects = projects.slice(VISIBLE_COUNT);
 
   return (
-    <section>
-      <h2 className="text-2xl font-bold text-white mb-6">專案</h2>
+    <section id={id}>
+      <h1 className="text-lg tracking-widest uppercase text-gray-400 mb-4">專案</h1>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-2 gap-y-6">
         {visibleProjects.map((project, i) => (
           <ProjectCard key={project.title} project={project} i={i} />
         ))}
 
-        {/* Hidden cards that animate in */}
         <AnimatePresence>
           {expanded &&
             hiddenProjects.map((project, i) => (
@@ -93,24 +102,20 @@ export default function ProjectsSection() {
               />
             ))}
         </AnimatePresence>
-
-        {/* Expand button — full-width grid item */}
-        {!expanded && (
-          <motion.button
-            onClick={() => setExpanded(true)}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-40px' }}
-            transition={{ duration: 0.3, delay: VISIBLE_COUNT * 0.05, ease: 'easeOut' }}
-            className="col-span-1 sm:col-span-2 rounded-2xl border border-white/10 bg-primary/20 hover:bg-primary/30 transition-colors duration-200 flex items-center justify-center gap-2 py-4 text-white/60 hover:text-white"
-          >
-            <span className="text-sm">更多專案</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </motion.button>
-        )}
       </div>
+
+      {!expanded && projects.length > VISIBLE_COUNT && (
+        <motion.button
+          onClick={() => setExpanded(true)}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3, delay: 0.2 }}
+          className="w-full hover:text-gray-900 transition-colors duration-200 flex items-center justify-center gap-2 py-4 text-sm text-gray-400 tracking-wide uppercase"
+        >
+          更多專案
+        </motion.button>
+      )}
     </section>
   );
 }

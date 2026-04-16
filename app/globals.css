@@ -5,3 +5,9 @@
 body {
     font-family: var(--font-roboto-condensed), var(--font-noto-sans-tc);
 }
+
+@layer base {
+    a {
+        @apply transition-colors hover:text-primary;
+    }
+}

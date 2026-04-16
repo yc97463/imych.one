@@ -20,7 +20,7 @@ export const projects: Project[] = [
     links: [
       { label: "Visit", href: "https://ndhuam-booking.pages.dev/" },
     ],
-    // image: "/images/ndhu-booking-system.png",
+    image: "/images/ndhuam-booking-system.png",
   },
   {
     title: "東華大學公告爬蟲 API",
@@ -28,9 +28,10 @@ export const projects: Project[] = [
       "使用 Golang 爬蟲撰寫成 JSON API，搭配 Tailwind CSS 設計的網頁，讓你在手機上也能好好讀公告。",
     tags: ["Golang", "Tailwind CSS", "Web Scraping"],
     links: [
-      { label: "Crawler GitHub", href: "https://github.com/yc97463/ndhu-announcement-crawler" },
-      { label: "Viewer GitHub", href: "https://github.com/yc97463/ndhu-announcement-viewer" },
+      { label: "Crawler GitHub", href: "https://github.com/yc97463/ndhu-announcement" },
+      { label: "Viewer GitHub", href: "https://github.com/yc97463/ndhu-announcement-frontpage" },
     ],
+    image: "/images/ndhu-announcement-frontpage-v1.png",
   },
   {
     title: "東華學生會資訊服務 API",
@@ -40,6 +41,7 @@ export const projects: Project[] = [
     links: [
       { label: "GitHub", href: "https://github.com/yc97463/dhsa-api" },
     ],
+    image: "/images/ndhusa-api-v1.jpg",
   },
   {
     title: "SITCON 2022 閉幕影片",
@@ -47,8 +49,9 @@ export const projects: Project[] = [
       "擔任 SITCON 2022 閉幕影片導演、規劃、剪輯。",
     tags: ["影片製作", "導演", "剪輯"],
     links: [
-      { label: "YouTube", href: "https://www.youtube.com/watch?v=YGXinEClNWI" },
+      { label: "YouTube", href: "https://youtu.be/qjlakrRa-kM" },
     ],
+    image: "/images/sitcon-2022-sde-v1.jpeg",
   },
   {
     title: "高雄市立龍華國中畢業影片",
@@ -56,8 +59,9 @@ export const projects: Project[] = [
       "107 學年度第 35 屆畢業影片 MV 暨謝師專欄。當我們一起走過的那些時光，畢業影片導演、剪輯兼拍攝。",
     tags: ["影片製作", "導演", "剪輯"],
     links: [
-      { label: "YouTube", href: "https://www.youtube.com/watch?v=rXJbEFxJLv8" },
+      { label: "YouTube", href: "https://youtu.be/Zb-O3NUFOPU" },
     ],
+    image: "/images/lhjh35th.jpg",
   },
   {
     title: "RPage 公告小工具",
@@ -65,8 +69,9 @@ export const projects: Project[] = [
       "快速取得以 RPage 為基底的校園公告，方便嵌入至個人網頁中。",
     tags: ["JavaScript", "Widget", "校園工具"],
     links: [
-      { label: "GitHub", href: "https://github.com/yc97463/rpage-announcement" },
+      { label: "GitHub", href: "https://github.com/yc97463/rpage-announcement-api" },
     ],
+    image: "/images/smhsguide-positiveMotto-rpageAnnouncementApi-v1.png",
   },
   {
     title: "耶晚亂數抽獎機",
@@ -74,15 +79,17 @@ export const projects: Project[] = [
       "高中學生會的亂數抽獎器，有時候我選擇困難時也會拿來抽。",
     tags: ["JavaScript", "Web App"],
     links: [
-      { label: "GitHub", href: "https://github.com/yc97463/random-lucky-draw" },
+      { label: "GitHub", href: "https://github.com/yc97463/Random-Lottery" },
     ],
+    image: "/images/sm-lottery-v1.gif",
   },
   {
     title: "CSCheckin 線上點名系統",
     description:
       "因應疫情，一款能幫助老師快速掌握線上學生的工具。",
     tags: ["Web App", "教育", "疫情工具"],
-    links: [],
+    links: [{ label: "Visit", href: "https://csc.deershark.com/" }],
+    image: "/images/cscheckin-v3.jpg",
   },
   {
     title: "RNRS 實名（聯）制進場系統",
@@ -90,41 +97,38 @@ export const projects: Project[] = [
       "疫情下，一套能夠快速消化活動人流的活動進場整合系統。",
     tags: ["Web App", "活動管理", "疫情工具"],
     links: [],
+    image: "/images/rnrs-v3.png",
   },
   {
     title: "學期成績計算神器 v2",
     description:
       "快速計算三次段考要考多少才會期末歐趴～",
     tags: ["JavaScript", "Web App", "教育"],
-    links: [
-      { label: "GitHub", href: "https://github.com/yc97463/grade-calculator" },
-    ],
+    links: [],
+    image: "/images/senior-edu-score-cal-v1.png",
   },
   {
     title: "社團線上展示卡片",
     description:
       "以網頁卡片的方式，展示社團簡介、照片，以及社團社群資訊。",
     tags: ["HTML", "CSS", "Web"],
-    links: [
-      { label: "GitHub", href: "https://github.com/yc97463/club-card" },
-    ],
+    links: [],
+    image: "/images/clubs-cards-carousel-v1.jpeg",
   },
   {
     title: "學習歷程解疑網",
     description:
       "整理新課綱學習歷程檔案的疑難雜症手冊。",
     tags: ["文件", "教育", "新課綱"],
-    links: [
-      { label: "GitHub", href: "https://github.com/yc97463/learning-portfolio-guide" },
-    ],
+    links: [],
+    image: "/images/smhs-epfsw-v2.jpg",
   },
   {
     title: "防疫叫車平台",
     description:
       "2020 臺灣青年黑客松參賽作品，對「疫情下的共享經濟」思索，如何在兼顧資訊科技的同時也能發揮最大效益。",
     tags: ["Hackathon", "共享經濟", "疫情工具"],
-    links: [
-      { label: "GitHub", href: "https://github.com/yc97463/anti-epidemic-taxi" },
-    ],
+    links: [],
+    image: "/images/ensured-harmless-taxi-master-v1.png",
   },
 ];

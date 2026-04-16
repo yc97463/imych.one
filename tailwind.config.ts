@@ -25,29 +25,6 @@ export default {
       },
       background: "var(--background)",
       foreground: "var(--foreground)",
-      animation: {
-        'background-shine': 'background-shine 10s ease-in-out infinite'
-      },
-      keyframes: {
-        'background-shine': {
-          '0%, 100%': {
-            'background-position': '0% 50%',
-            'background-color': '#5CB4CC'
-          },
-          '20%': {
-            'background-color': '#5cb3cc'
-          },
-          '40%': {
-            'background-color': '#2c7a9c'
-          },
-          '60%': {
-            'background-color': '#1e5a73'
-          },
-          '80%': {
-            'background-color': '#2c7a9c'
-          }
-        }
-      },
     },
   },
   plugins: [],
