@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import styles from '../../styles/calendar.module.css';
+import Link from 'next/link';
 
 const calendarIds = [
     // "eW91dWFsYW44N0BnbWFpbC5jb20",
@@ -29,30 +30,28 @@ export default function CalendarPage() {
         .join('&')}`;
 
     return (
-        <main className={`${styles.background} h-dvh w-screen flex flex-col items-center justify-center overflow-auto`}>
-            {/* 標題 */}
-            <div className="my-6">
-                <Image
-                    src="/assets/cal/title.svg"
-                    alt="yc's schedule"
-                    width={256}
-                    height={64}
-                    className={`${styles.title}`}
-                />
-            </div>
+        <main className={`${styles.background} flex flex-col items-center gap-4 pt-4`}>
+            <div className="h-14" />
+            <Image
+                src="/assets/cal/title.svg"
+                alt="yc's schedule"
+                width={256}
+                height={64}
+                className={styles.title}
+            />
 
-            {/* 行程表 */}
-            <div className="w-full h-full max-w-4xl my-0 md:mb-6 relative">
+            <Link
+                href="https://calendar.app.google/XWUrpKWa21oNn2Q9A"
+                target="_blank"
+                className="relative z-[2] px-4 py-1 text-white bg-primary hover:text-white transition-colors"
+            >
+                想找我聊聊？來預約 30 分鐘 ↗
+            </Link>
+
+            <div className="w-full flex-1 min-h-0 lg:max-w-[1800px] lg:px-4 md:mb-6">
                 <iframe
                     src={calendarUrl}
-                    className={`${styles.iframe} rounded-t-lg md:rounded-xl`}
-                    style={{
-                        border: 'none',
-                        width: '100%',
-                        height: '100%',
-                    }}
-                    frameBorder="0"
-                    scrolling="no"
+                    className={`${styles.iframe} w-full h-full rounded-t-lg md:rounded-none`}
                 />
             </div>
         </main>

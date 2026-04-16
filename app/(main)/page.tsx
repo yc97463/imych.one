@@ -5,8 +5,8 @@ import { Check, Copy } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from "framer-motion";
-import ProjectsSection from "./components/ProjectsSection";
-import TimelineSection from "./components/TimelineSection";
+import ProjectsSection from "../components/ProjectsSection";
+import TimelineSection from "../components/TimelineSection";
 import { experiences, type Experience } from "@/lib/experience";
 import { talks, type Talk } from "@/lib/talks";
 
@@ -62,20 +62,7 @@ export default function HomePage() {
     };
 
     return (
-        <main className="bg-gray-100 min-h-screen">
-            {/* Nav */}
-            <nav className="border-b border-gray-200 sticky top-0 z-50 bg-gray-100">
-                <div className="max-w-[1800px] mx-auto px-6 h-14 flex items-center justify-between">
-                    <Link href="/">
-                        <Image src="/assets/yc-zh-name.svg" alt="油成" width={40} height={20} />
-                    </Link>
-                    <div className="flex gap-6 text-base">
-                        <Link href="/" className="text-gray-500 hover:text-gray-900">Me</Link>
-                        <a href="https://blog.imych.one" className="text-gray-500" target="_blank">Blog ↗</a>
-                    </div>
-                </div>
-            </nav>
-
+        <main>
             {/* Hero / About */}
             <section id="about" className="w-full py-16">
                 <div className="max-w-[1800px] mx-auto px-6">
@@ -112,8 +99,8 @@ export default function HomePage() {
                                     <p className="text-gray-900 font-medium hover:text-primary transition-colors py-2">
                                         工具雖小，卻能一再解決問題。
                                     </p>
-                                    <p>累積超過 5 年的專案開發經驗，橫跨前後端框架；目前正在深入數學科學，朝跨領域工程師發展。</p>
-                                    <p>也喜歡研究人文、交通與城市設計，著迷於發現人事物之間細微的關聯。</p>
+                                    <p>累積超過 5 年的專案開發經驗，橫跨前後端框架；目前正在深入數學科學與資訊安全，朝跨領域工程師發展。</p>
+                                    <p>此外，我也喜歡研究人文、交通與城市設計等議題，著迷於發現人事物之間細微的關聯。歡迎來信聊聊！</p>
                                 </div>
                             </div>
 
@@ -172,64 +159,6 @@ export default function HomePage() {
                     </div>
                 </div>
             </div>
-
-            {/* Footer */}
-            <footer className="w-full border-t border-gray-200 mt-16">
-                <div className="max-w-[1800px] mx-auto px-6 py-16">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-                        {/* Branding */}
-                        <div className="flex flex-col gap-3">
-                            <Image src="/assets/yc-zh-name.svg" alt="油成" width={56} height={28} />
-                            <p className="text-sm text-gray-400 leading-relaxed max-w-[220px]">
-                                工具雖小，卻能一再解決問題。
-                            </p>
-                            <p className="text-xs tracking-widest uppercase text-gray-400">
-                                built with curiosity
-                            </p>
-                        </div>
-
-                        {/* Links */}
-                        <div className="flex flex-col gap-2">
-                            <p className="text-xs tracking-widest uppercase text-gray-400 mb-1">Connect</p>
-                            {[
-                                { label: 'Email', href: 'mailto:hi@imych.one' },
-                                { label: 'Blog', href: 'https://blog.imych.one', external: true },
-                                { label: '最近忙這些', href: 'https://blog.imych.one/now', external: true },
-                                { label: '預約時間', href: '/cal' },
-                            ].map(({ label, href, external }) => (
-                                <a
-                                    key={label}
-                                    href={href}
-                                    target={external ? '_blank' : undefined}
-                                    rel={external ? 'noopener noreferrer' : undefined}
-                                    className="text-sm text-gray-500 inline-flex items-center gap-0.5 w-fit"
-                                >
-                                    {label}{external && <span className="text-xs">↗</span>}
-                                </a>
-                            ))}
-                        </div>
-
-                        {/* Meta */}
-                        <div className="flex flex-col gap-2">
-                            <p className="text-xs tracking-widest uppercase text-gray-400 mb-1">Pages</p>
-                            {[
-                                { label: 'About', href: '/#about' },
-                                { label: 'Experience', href: '/#experience' },
-                                { label: 'Projects', href: '/#projects' },
-                                { label: 'Talks', href: '/#talks' },
-                            ].map(({ label, href }) => (
-                                <a
-                                    key={label}
-                                    href={href}
-                                    className="text-sm text-gray-500 w-fit"
-                                >
-                                    {label}
-                                </a>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </footer>
         </main>
     );
 }

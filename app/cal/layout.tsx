@@ -1,24 +1,16 @@
 import { Metadata } from 'next';
+import Nav from '../components/Nav';
 
 export const metadata: Metadata = {
     title: '油成的行事曆',
 };
 
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function CalLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="zh-Hant">
-            <body>
-                {children}
-                {/* <Header />
-                    <main>
-                    <ContactSection />
-                    <AboutSection />
-                    <SkillsSection />
-                    {children}
-                    </main> */
-                }
-            </body>
-        </html>
+        <div className="bg-gray-100 h-dvh">
+            <Nav />
+            <div className="h-14" />
+            {children}
+        </div>
     );
 }
