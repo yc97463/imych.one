@@ -45,7 +45,7 @@ export default function CalendarPage() {
                 target="_blank"
                 className="relative z-[2] px-4 py-1 text-white bg-primary hover:text-white transition-colors"
             >
-                想找我聊聊？來預約 30 分鐘 ↗
+                來泡杯茶？預約 30 分鐘 ↗
             </Link>
 
             <div className="w-full flex-1 min-h-0 lg:max-w-[1800px] lg:px-4 md:mb-6">
