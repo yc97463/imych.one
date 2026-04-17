@@ -51,7 +51,7 @@ export const talks: Talk[] = [
   },
   {
     years: [2022],
-    title: "不插電課程講師",
+    title: "不插電課程講者",
     event: "SITCON 2022 Hour of Code 高雄場",
     link: "https://drive.google.com/file/d/1VgfiXjp8Bi1Vs9oIJ3REAn7VDk655O0s/view?usp=sharing",
   },

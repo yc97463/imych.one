@@ -84,7 +84,7 @@ export const experiences: Experience[] = [
   },
   {
     years: [2023],
-    role: "資訊組、課程講師、隊輔組副組長",
+    role: "資訊組、課程講者、隊輔組副組長",
     org: "SITCON 2023 Summer Camp",
   },
   {
@@ -101,7 +101,7 @@ export const experiences: Experience[] = [
   },
   {
     years: [2022],
-    role: "Hour of Code 高雄場總召、講師",
+    role: "Hour of Code 高雄場總召、講者",
     org: "SITCON 2022",
   },
   {
