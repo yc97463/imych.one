@@ -80,6 +80,7 @@ export default function HomePage() {
                                 width={600}
                                 height={600}
                                 className="w-full h-full object-cover"
+                                priority
                             />
                         </motion.div>
 
@@ -92,7 +93,7 @@ export default function HomePage() {
                         >
                             <div>
                                 <h1 className="font-bold text-gray-900 mb-5">
-                                    <Image src="/assets/yc-zh-name.svg" alt="油成" width={100} height={50} />
+                                    <Image src="/assets/yc-zh-name.svg" alt="油成" width={100} height={53} style={{ height: 'auto' }} />
                                 </h1>
                                 <div className="space-y-3 text-base text-gray-600 leading-relaxed">
                                     <p>嗨我是油成！是個從國中即開始秉持著以小工具的理念解決日常問題的大學生。</p>

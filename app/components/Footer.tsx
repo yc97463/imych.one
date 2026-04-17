@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                     {/* Branding */}
                     <div className="flex flex-col gap-3">
-                        <Image src="/assets/yc-zh-name.svg" alt="油成" width={56} height={28} />
+                        <Image src="/assets/yc-zh-name.svg" alt="油成" width={56} height={30} style={{ height: 'auto' }} />
                         <p className="text-sm text-gray-400 leading-relaxed max-w-[220px]">
                             工具雖小，卻能一再解決問題。
                         </p>
