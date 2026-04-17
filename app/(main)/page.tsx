@@ -99,7 +99,7 @@ export default function HomePage() {
                                     <p className="text-gray-900 font-medium hover:text-primary transition-colors py-2">
                                         工具雖小，卻能一再解決問題。
                                     </p>
-                                    <p>累積超過 5 年的專案開發經驗，橫跨前後端框架；目前正在深入數學科學與資訊安全，朝跨領域工程師發展。</p>
+                                    <p>三個開發 hashtag #全端 #DevOps #Cloud。目前深入數學科學與資訊安全，朝跨領域工程師發展。</p>
                                     <p>此外，我也喜歡研究人文、交通與城市設計等議題，著迷於發現人事物之間細微的關聯。歡迎聊聊！</p>
                                 </div>
                             </div>
