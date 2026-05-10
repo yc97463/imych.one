@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import ProjectsSection from '@/components/ProjectsSection';
 import HomeSections from '@/components/HomeSections';
 import CopyEmailButton from '@/components/CopyEmailButton';
 import HomepageHero from '@/components/HomepageHero';
@@ -8,6 +7,7 @@ import { getAllProjectPosts } from '@/lib/markdown';
 
 export default function HomePage() {
     const projects = getAllProjectPosts();
+
 
     return (
         <main>
@@ -49,10 +49,8 @@ export default function HomePage() {
             {/* Content sections */}
             <div className="w-full">
                 <div className="max-w-[1800px] mx-auto px-6 flex flex-col gap-16">
-                    <HomeSections />
-                    <div id="projects">
-                        <ProjectsSection projects={projects} />
-                    </div>
+                    <HomeSections projects={projects} />
+
                 </div>
             </div>
         </main>

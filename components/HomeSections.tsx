@@ -2,7 +2,9 @@
 
 import TimelineSection from './TimelineSection';
 import { experiences, type Experience } from '@/lib/experience';
+import ProjectsSection from '@/components/ProjectsSection';
 import { talks, type Talk } from '@/lib/talks';
+import type { ProjectMeta } from '@/lib/markdown';
 
 function ExperienceItem({ item }: { item: Experience }) {
     return (
@@ -44,7 +46,7 @@ function TalkItem({ item }: { item: Talk }) {
     );
 }
 
-export default function HomeSections() {
+export default function HomeSections({ projects }: { projects: ProjectMeta[] }) {
     return (
         <>
             <div id="experience">
@@ -54,6 +56,9 @@ export default function HomeSections() {
                     renderItem={(item) => <ExperienceItem item={item} />}
                     layout="horizontal"
                 />
+            </div>
+            <div id="projects">
+                <ProjectsSection projects={projects} />
             </div>
             <div id="talks">
                 <TimelineSection
