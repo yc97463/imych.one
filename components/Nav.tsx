@@ -11,8 +11,8 @@ export default function Nav() {
                     <Image src="/assets/yc-zh-name.svg" alt="油成" width={40} height={21} style={{ height: 'auto' }} />
                 </Link>
                 <div className="flex gap-6 text-base">
-                    <Link href="/" className="text-gray-500 hover:text-gray-900">Me</Link>
-                    <a href="https://blog.imych.one" className="text-gray-500" target="_blank">Blog ↗</a>
+                    <Link href="/" className="text-secondary">Me</Link>
+                    <a href="https://blog.imych.one" className="text-secondary" target="_blank">Blog ↗</a>
                 </div>
             </div>
         </nav>

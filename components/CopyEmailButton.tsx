@@ -16,10 +16,10 @@ export default function CopyEmailButton({ email }: { email: string }) {
   return (
     <button
       onClick={handleCopy}
-      className="text-base text-gray-500 hover:text-primary transition-colors flex items-center gap-1.5 cursor-pointer"
+      className="text-base text-secondary hover:text-blue transition-colors flex items-center gap-1.5 cursor-pointer"
     >
       {isCopied ? (
-        <><Check className="w-4 h-4 text-primary" /> Copied!</>
+        <><Check className="w-4 h-4 text-blue" /> Copied!</>
       ) : (
         <>{email} <Copy className="w-4 h-4" /></>
       )}

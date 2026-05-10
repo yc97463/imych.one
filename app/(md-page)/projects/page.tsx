@@ -12,7 +12,7 @@ export default function ProjectsPage() {
   return (
     <>
       <main className="max-w-[1800px] mx-auto px-6 py-16">
-        <h1 className="text-3xl font-bold text-gray-900 mb-12">Projects</h1>
+        <h1 className="text-3xl font-bold text-primary mb-12">Projects</h1>
         <ProjectsSection projects={projects} />
       </main>
     </>

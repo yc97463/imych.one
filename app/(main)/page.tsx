@@ -19,12 +19,12 @@ export default function HomePage() {
 
                         <div className="flex flex-col gap-6 pt-2">
                             <div>
-                                <h1 className="font-bold text-gray-900 mb-5">
+                                <h1 className="font-bold text-primary mb-5">
                                     <Image src="/assets/yc-zh-name.svg" alt="油成" width={100} height={53} style={{ height: 'auto' }} />
                                 </h1>
-                                <div className="space-y-3 text-base text-gray-600 leading-relaxed">
+                                <div className="space-y-3 text-base text-secondary leading-relaxed">
                                     <p>嗨我是油成！是個從國中即開始秉持著以小工具的理念解決日常問題的大學生。</p>
-                                    <p className="text-gray-900 font-medium hover:text-primary transition-colors py-2">
+                                    <p className="text-primary font-medium hover:text-blue transition-colors py-2">
                                         工具雖小，卻能一再解決問題。
                                     </p>
                                     <p>三個開發 hashtag #全端 #DevOps #Cloud。目前深入數學科學與資訊安全，朝跨領域工程師發展。</p>
@@ -34,10 +34,10 @@ export default function HomePage() {
 
                             <div className="flex items-center gap-6">
                                 <CopyEmailButton email="hi@imych.one" />
-                                <Link href="/cal" className="text-base text-gray-500">
+                                <Link href="/cal" className="text-base text-secondary">
                                     預約時間 ↗
                                 </Link>
-                                <Link href="https://blog.imych.one/now" className="text-base text-gray-500" target="_blank">
+                                <Link href="https://blog.imych.one/now" className="text-base text-secondary" target="_blank">
                                     最近忙這些 ↗
                                 </Link>
                             </div>

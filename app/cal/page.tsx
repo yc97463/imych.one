@@ -43,7 +43,7 @@ export default function CalendarPage() {
             <Link
                 href="https://calendar.app.google/XWUrpKWa21oNn2Q9A"
                 target="_blank"
-                className="relative z-[2] px-4 py-1 text-white bg-primary hover:text-white transition-colors"
+                className="relative z-[2] px-4 py-1 text-white bg-blue hover:text-white transition-colors"
             >
                 來泡杯茶？預約 30 分鐘 ↗
             </Link>

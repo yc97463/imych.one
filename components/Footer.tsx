@@ -9,17 +9,17 @@ export default function Footer() {
                     {/* Branding */}
                     <div className="flex flex-col gap-3">
                         <Image src="/assets/yc-zh-name.svg" alt="油成" width={56} height={30} style={{ height: 'auto' }} />
-                        <p className="text-sm text-gray-400 leading-relaxed max-w-[220px]">
+                        <p className="text-sm text-secondary leading-relaxed max-w-[220px]">
                             工具雖小，卻能一再解決問題。
                         </p>
-                        <p className="text-xs tracking-widest uppercase text-gray-400">
+                        <p className="text-xs tracking-widest uppercase text-secondary">
                             built with curiosity
                         </p>
                     </div>
 
                     {/* Links */}
                     <div className="flex flex-col gap-2">
-                        <p className="text-xs tracking-widest uppercase text-gray-400 mb-1">Connect</p>
+                        <p className="text-xs tracking-widest uppercase text-secondary mb-1">Connect</p>
                         {[
                             { label: 'Email', href: 'mailto:hi@imych.one' },
                             { label: 'Blog', href: 'https://blog.imych.one', external: true },
@@ -31,7 +31,7 @@ export default function Footer() {
                                 href={href}
                                 target={external ? '_blank' : undefined}
                                 rel={external ? 'noopener noreferrer' : undefined}
-                                className="text-sm text-gray-500 inline-flex items-center gap-0.5 w-fit"
+                                className="text-sm text-secondary inline-flex items-center gap-0.5 w-fit"
                             >
                                 {label}{external && <span className="text-xs">↗</span>}
                             </a>
@@ -40,7 +40,7 @@ export default function Footer() {
 
                     {/* Meta */}
                     <div className="flex flex-col gap-2">
-                        <p className="text-xs tracking-widest uppercase text-gray-400 mb-1">Pages</p>
+                        <p className="text-xs tracking-widest uppercase text-secondary mb-1">Pages</p>
                         {[
                             { label: 'About', href: '/#about' },
                             { label: 'Experience', href: '/#experience' },
@@ -50,7 +50,7 @@ export default function Footer() {
                             <a
                                 key={label}
                                 href={href}
-                                className="text-sm text-gray-500 w-fit"
+                                className="text-sm text-secondary w-fit"
                             >
                                 {label}
                             </a>

@@ -9,18 +9,18 @@ import type { ProjectMeta } from '@/lib/markdown';
 function ExperienceItem({ item }: { item: Experience }) {
     return (
         <div>
-            <p className="text-gray-900 text-lg font-medium leading-snug">{item.role}</p>
+            <p className="text-primary text-lg font-medium leading-snug">{item.role}</p>
             {item.link ? (
                 <a
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-500 text-base mt-0.5 inline-flex items-center gap-0.5"
+                    className="text-secondary text-base mt-0.5 inline-flex items-center gap-0.5"
                 >
                     {item.org} <span>↗</span>
                 </a>
             ) : (
-                <p className="text-gray-500 text-base mt-0.5">{item.org}</p>
+                <p className="text-secondary text-base mt-0.5">{item.org}</p>
             )}
         </div>
     );
@@ -34,14 +34,14 @@ function TalkItem({ item }: { item: Talk }) {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-900 text-lg font-medium leading-snug"
+                    className="text-primary text-lg font-medium leading-snug"
                 >
                     {item.title} <span>↗</span>
                 </a>
             ) : (
-                <p className="text-gray-900 text-lg font-medium leading-snug">{item.title}</p>
+                <p className="text-primary text-lg font-medium leading-snug">{item.title}</p>
             )}
-            <p className="text-gray-500 text-base mt-0.5">{item.event}</p>
+            <p className="text-secondary text-base mt-0.5">{item.event}</p>
         </>
     );
 }

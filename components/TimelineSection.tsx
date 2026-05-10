@@ -32,7 +32,7 @@ export default function TimelineSection<T extends BaseItem>({ title, items, rend
 
   return (
     <section>
-      <h1 className="text-lg tracking-widest uppercase text-gray-400 mb-4">{title}</h1>
+      <h1 className="text-lg tracking-widest uppercase text-secondary mb-4">{title}</h1>
 
       {layout === 'horizontal' ? (
         /* Year columns grid */
@@ -46,7 +46,7 @@ export default function TimelineSection<T extends BaseItem>({ title, items, rend
               transition={{ duration: 0.3, delay: yi * 0.04, ease: 'easeOut' }}
             >
               <div className="flex items-center gap-2 mb-3">
-                <span className="text-sm font-semibold text-gray-400 shrink-0">{year}</span>
+                <span className="text-sm font-semibold text-secondary shrink-0">{year}</span>
                 <div className="flex-1 h-px bg-gray-200" />
               </div>
               <div className="flex flex-col gap-3">
@@ -71,7 +71,7 @@ export default function TimelineSection<T extends BaseItem>({ title, items, rend
               transition={{ duration: 0.3, delay: yi * 0.05, ease: 'easeOut' }}
             >
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-sm font-semibold text-gray-400">{year}</span>
+                <span className="text-sm font-semibold text-secondary">{year}</span>
                 <div className="flex-1 h-px bg-gray-200" />
               </div>
 
@@ -85,7 +85,7 @@ export default function TimelineSection<T extends BaseItem>({ title, items, rend
                     transition={{ duration: 0.25, delay: yi * 0.05 + ii * 0.04, ease: 'easeOut' }}
                     className="flex gap-3 items-start"
                   >
-                    <div className="w-1 h-1 bg-primary shrink-0 mt-[6px]" />
+                    <div className="w-1 h-1 bg-blue shrink-0 mt-[6px]" />
                     <div>{renderItem(item, { yi, ii })}</div>
                   </motion.div>
                 ))}
