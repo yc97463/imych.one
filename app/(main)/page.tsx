@@ -1,65 +1,13 @@
-'use client';
-
-import { useState } from "react";
-import { Check, Copy } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from "framer-motion";
-import ProjectsSection from "../components/ProjectsSection";
-import TimelineSection from "../components/TimelineSection";
-import { experiences, type Experience } from "@/lib/experience";
-import { talks, type Talk } from "@/lib/talks";
-
-function ExperienceItem({ item }: { item: Experience }) {
-    return (
-        <div>
-            <p className="text-gray-900 text-lg font-medium leading-snug">{item.role}</p>
-            {item.link ? (
-                <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-500 text-base mt-0.5 inline-flex items-center gap-0.5"
-                >
-                    {item.org} <span>↗</span>
-                </a>
-            ) : (
-                <p className="text-gray-500 text-base mt-0.5">{item.org}</p>
-            )}
-        </div>
-    );
-}
-
-function TalkItem({ item }: { item: Talk }) {
-    return (
-        <>
-            {item.link ? (
-                <a
-                    href={item.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-900 text-lg font-medium leading-snug"
-                >
-                    {item.title} <span>↗</span>
-                </a>
-            ) : (
-                <p className="text-gray-900 text-lg font-medium leading-snug">{item.title}</p>
-            )}
-            <p className="text-gray-500 text-base mt-0.5">{item.event}</p>
-        </>
-    );
-}
+import ProjectsSection from '@/components/ProjectsSection';
+import HomeSections from '@/components/HomeSections';
+import CopyEmailButton from '@/components/CopyEmailButton';
+import HomepageHero from '@/components/HomepageHero';
+import { getAllProjectPosts } from '@/lib/markdown';
 
 export default function HomePage() {
-    const [isCopied, setIsCopied] = useState(false);
-    const email = 'hi@imych.one';
-
-    const handleCopy = () => {
-        navigator.clipboard.writeText(email).then(() => {
-            setIsCopied(true);
-            setTimeout(() => setIsCopied(false), 2000);
-        });
-    };
+    const projects = getAllProjectPosts();
 
     return (
         <main>
@@ -67,30 +15,9 @@ export default function HomePage() {
             <section id="about" className="w-full py-16">
                 <div className="max-w-[1800px] mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                        {/* Left: Image */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 0.5 }}
-                            className="aspect-video overflow-hidden bg-gray-100"
-                        >
-                            <Image
-                                src="/assets/yc-and-ULB.jpeg"
-                                alt="yc's avatar"
-                                width={600}
-                                height={600}
-                                className="w-full h-full object-cover"
-                                priority
-                            />
-                        </motion.div>
+                        <HomepageHero />
 
-                        {/* Right: Text + contact */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 8 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.4, delay: 0.15 }}
-                            className="flex flex-col gap-6 pt-2"
-                        >
+                        <div className="flex flex-col gap-6 pt-2">
                             <div>
                                 <h1 className="font-bold text-gray-900 mb-5">
                                     <Image src="/assets/yc-zh-name.svg" alt="油成" width={100} height={53} style={{ height: 'auto' }} />
@@ -105,33 +32,16 @@ export default function HomePage() {
                                 </div>
                             </div>
 
-                            {/* Contact */}
                             <div className="flex items-center gap-6">
-                                <button
-                                    onClick={handleCopy}
-                                    className="text-base text-gray-500 hover:text-primary transition-colors flex items-center gap-1.5 cursor-pointer"
-                                >
-                                    {isCopied ? (
-                                        <><Check className="w-4 h-4 text-primary" /> Copied!</>
-                                    ) : (
-                                        <>{email} <Copy className="w-4 h-4" /></>
-                                    )}
-                                </button>
-                                <Link
-                                    href="/cal"
-                                    className="text-base text-gray-500"
-                                >
+                                <CopyEmailButton email="hi@imych.one" />
+                                <Link href="/cal" className="text-base text-gray-500">
                                     預約時間 ↗
                                 </Link>
-                                <Link
-                                    href="https://blog.imych.one/now"
-                                    className="text-base text-gray-500"
-                                    target="_blank"
-                                >
+                                <Link href="https://blog.imych.one/now" className="text-base text-gray-500" target="_blank">
                                     最近忙這些 ↗
                                 </Link>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -139,24 +49,9 @@ export default function HomePage() {
             {/* Content sections */}
             <div className="w-full">
                 <div className="max-w-[1800px] mx-auto px-6 flex flex-col gap-16">
-                    <div id="experience">
-                        <TimelineSection
-                            title="社群經歷"
-                            items={experiences}
-                            renderItem={(item) => <ExperienceItem item={item} />}
-                            layout="horizontal"
-                        />
-                    </div>
+                    <HomeSections />
                     <div id="projects">
-                        <ProjectsSection />
-                    </div>
-                    <div id="talks">
-                        <TimelineSection
-                            title="演講與發表"
-                            items={talks}
-                            renderItem={(item) => <TalkItem item={item} />}
-                            layout="horizontal"
-                        />
+                        <ProjectsSection projects={projects} />
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import styles from '../../styles/calendar.module.css';
+import styles from '@/styles/calendar.module.css';
 import Link from 'next/link';
 
 const calendarIds = [
