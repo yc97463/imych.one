@@ -10,7 +10,6 @@ export default function CalLayout({ children }: { children: React.ReactNode }) {
     return (
         <div className="bg-gray-100 h-dvh">
             <Nav />
-            <div className="h-14" />
             {children}
             <Footer />
         </div>

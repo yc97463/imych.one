@@ -30,8 +30,8 @@ export default function CalendarPage() {
         .join('&')}`;
 
     return (
-        <main className={`${styles.background} flex flex-col items-center gap-4 pt-4`}>
-            <div className="h-14" />
+        <main className={`${styles.background} flex flex-col items-center gap-4`}>
+            <div className="h-14 w-full bg-white mb-4" />
             <Image
                 src="/assets/cal/title.svg"
                 alt="yc's schedule"
