@@ -87,7 +87,7 @@ export default async function ProjectDetailPage({ params }: { params: Promise<{ 
                     href={post.links[0].href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-secondary group/link relative flex-1 min-w-0 border-l border-gray-200 pl-4 flex items-end transition-colors hover:bg-gray-900 -mr-4 pr-4 -my-4 py-4"
+                    className="text-secondary group/link relative flex-1 min-w-0 border-l border-gray-200 pl-4 flex items-end transition-colors hover:bg-blue -mr-4 pr-4 -my-4 py-4"
                   >
                     <span className="text-lg group-hover/link:text-white transition-colors truncate">{post.links[0].label}</span>
                     <ArrowUpRight strokeWidth={1} className="absolute top-2 right-2 w-8 h-8 group-hover/link:text-white transition-all group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />
