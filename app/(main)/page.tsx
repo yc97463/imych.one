@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import HomeSections from '@/components/HomeSections';
 import CopyEmailButton from '@/components/CopyEmailButton';
 import HomepageHero from '@/components/HomepageHero';
+import YcName from '@/components/YcName';
 import { getAllProjectPosts } from '@/lib/markdown';
 
 export default function HomePage() {
@@ -19,8 +19,8 @@ export default function HomePage() {
 
                         <div className="flex flex-col gap-6 pt-2">
                             <div>
-                                <h1 className="font-bold text-primary mb-5">
-                                    <Image src="/assets/yc-zh-name.svg" alt="油成" width={100} height={53} style={{ height: 'auto' }} />
+                                <h1 className="font-bold text-primary hover:text-blue transition-colors mb-5">
+                                    <YcName width={100} height={53} />
                                 </h1>
                                 <div className="space-y-3 text-base text-secondary leading-relaxed">
                                     <p>嗨我是油成！是個從國中即開始秉持著以小工具的理念解決日常問題的大學生。</p>
