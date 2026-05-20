@@ -6,6 +6,11 @@ export type Shortlink = {
 
 export const shortlinks: Shortlink[] = [
     {
+        "name": "從災後重建到永續觀光 - GIS 決賽簡報",
+        "slug": "guangfu-youbike-study",
+        "to": "https://drive.google.com/file/d/1OKVr7cQlSBOpoaF3hbgiLLt5GfVlG51v/view?usp=sharing",
+    },
+    {
         "name": "Screen Message",
         "slug": "sm",
         "to": "https://sm.dstw.dev/",
