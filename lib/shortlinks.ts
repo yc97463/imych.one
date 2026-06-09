@@ -4,6 +4,18 @@ export type Shortlink = {
     to: string;
 };
 
+// Top-level path segments that already map to real routes.
+// Root-level shortlinks with these slugs are skipped to avoid collisions.
+export const reservedSlugs = ["go", "projects", "cal"];
+
+export function findShortlink(slug: string): Shortlink | undefined {
+    return shortlinks.find((link) => link.slug === slug);
+}
+
+// Slugs eligible to be served from the site root (i.e. not reserved).
+export const rootShortlinks = (): Shortlink[] =>
+    shortlinks.filter((link) => !reservedSlugs.includes(link.slug));
+
 export const shortlinks: Shortlink[] = [
     {
         "name": "從災後重建到永續觀光 - GIS 決賽簡報",
