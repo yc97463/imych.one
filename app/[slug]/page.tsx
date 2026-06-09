@@ -3,7 +3,7 @@ import RedirectTo from "@/components/RedirectTo";
 import { Metadata } from "next";
 
 // Pre-generate only the (non-reserved) shortlink slugs at the site root.
-// Real top-level routes (/, /projects, /cal, /go/...) are unaffected.
+// Real top-level routes (/, /projects, /cal) are unaffected.
 export function generateStaticParams() {
     return rootShortlinks().map((link) => ({
         slug: link.slug,

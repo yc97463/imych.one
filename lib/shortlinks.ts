@@ -6,7 +6,7 @@ export type Shortlink = {
 
 // Top-level path segments that already map to real routes.
 // Root-level shortlinks with these slugs are skipped to avoid collisions.
-export const reservedSlugs = ["go", "projects", "cal"];
+export const reservedSlugs = ["projects", "cal"];
 
 export function findShortlink(slug: string): Shortlink | undefined {
     return shortlinks.find((link) => link.slug === slug);
