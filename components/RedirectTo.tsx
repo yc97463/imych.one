@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const REDIRECT_DELAY = 1200;
+const REDIRECT_DELAY = 3000;
 
 interface RedirectToProps {
     name?: string;
@@ -41,7 +41,7 @@ export default function RedirectTo({ name, to }: RedirectToProps) {
                 </p>
 
                 <h1 className="text-2xl font-bold leading-snug text-primary">
-                    {name ?? "正在為您跳轉"}
+                    {name ?? "正在準備跳轉"}
                 </h1>
 
                 {isExternal && (
@@ -68,7 +68,7 @@ export default function RedirectTo({ name, to }: RedirectToProps) {
                     rel={isExternal ? "noopener noreferrer" : undefined}
                     className="text-sm text-secondary underline decoration-gray-300 underline-offset-4 hover:decoration-blue"
                 >
-                    沒有自動跳轉？點此前往{isExternal ? " ↗" : ""}
+                    立刻前往{isExternal ? " ↗" : ""}
                 </a>
             </div>
         </main>
