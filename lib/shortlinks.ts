@@ -151,5 +151,10 @@ export const shortlinks: Shortlink[] = [
         "name": "三民耶晚抽籤！",
         "slug": "lottery",
         "to": "https://lottery-sm.server.imych.one/indexV2",
+    },
+    {
+        "name": "油成想吃",
+        "slug": "foodie",
+        "to": "https://maps.app.goo.gl/ykLxZE5HHr69CbBg7?g_st=i"
     }
 ]
